@@ -21,10 +21,9 @@ public class PhotosView extends javax.swing.JPanel {
     public PhotosView() {
         //photoP.setIcon(new ImageIcon(image.getImage().getScaledInstance(photoP.getWidth(), photoP.getHeight(), Image.SCALE_DEFAULT)));
         initComponents();
+        
     }
-    public JLabel getLabel(){
-        return photoP;
-    }
+  
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
