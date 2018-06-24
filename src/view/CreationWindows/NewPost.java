@@ -44,7 +44,8 @@ public class NewPost extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         text = new javax.swing.JTextPane();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         addPhoto.setText("Adicionar Fotos");
         addPhoto.addActionListener(new java.awt.event.ActionListener() {
