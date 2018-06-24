@@ -6,6 +6,7 @@
 package control;
 
 import java.io.Serializable;
+import javax.swing.JFrame;
 import model.SocialNetwork;
 import view.Login.Login;
 import view.Login.NewUser;
@@ -23,15 +24,10 @@ import view.CreationWindows.NewPost;
  * @author italo
  */
 public class App implements Serializable{
+    
+    private static JFrame mainWindow;
+    private static JFrame secondaryWindow;
     private static SocialNetwork network;
-    private static Login loginView;
-    private static NewUser newUserView;
-    private static ChangePassword changePasswordView;
-    private static ForgotenPassword forgotenPassword;
-    private static MainView main;
-    private static AboutEdit about;
-    private static NewCommentary commentary;
-    private static NewPost post;
     
     public static void main(String[] args) {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -57,55 +53,43 @@ public class App implements Serializable{
         showLoginView();
     }
     public static void showLoginView(){
-        loginView = new Login();
-        loginView.setVisible(true);
+        mainWindow = new Login();
+        mainWindow.setVisible(true);
     }
     
     public static void showNewUserView(){
-        newUserView = new NewUser();
-        newUserView.setVisible(true);
+        secondaryWindow = new NewUser();
+        secondaryWindow.setVisible(true);
     }
     
     public static void showChangePasswordView(){
-        changePasswordView = new ChangePassword();
-        changePasswordView.setVisible(true);
+        secondaryWindow = new ChangePassword();
+        secondaryWindow.setVisible(true);
     }
     public static void showForgotenPasswordView(){
-        forgotenPassword = new ForgotenPassword();
-        forgotenPassword.setVisible(true);
+        secondaryWindow = new ForgotenPassword();
+        secondaryWindow.setVisible(true);
     }
     
     public static void showMainView(){
-        main = new MainView();
-        main.setVisible(true);
+        mainWindow = new MainView();
+        mainWindow.setVisible(true);
     }
     
     public static void ShowAboutEdit(){
-        about = new AboutEdit();
-        about.setVisible(true);
+        secondaryWindow = new AboutEdit();
+        secondaryWindow.setVisible(true);
     }
     public static void ShowNewCommentary(){
-        commentary = new NewCommentary();
-        commentary.setVisible(true);
+        secondaryWindow = new NewCommentary();
+        secondaryWindow.setVisible(true);
     }
     public static void ShowNewPost(){
-        post = new NewPost();
-        post.setVisible(true);
+        secondaryWindow = new NewPost();
+        secondaryWindow.setVisible(true);
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    // getters and setters
     public static SocialNetwork getNetwork() {
         return network;
     }
@@ -114,51 +98,19 @@ public class App implements Serializable{
         App.network = network;
     }
 
-    public static Login getLoginView() {
-        return loginView;
+    public static JFrame getMainWindow() {
+        return mainWindow;
     }
 
-    public static void setLoginView(Login loginView) {
-       App.loginView = loginView;
+    public static void setMainWindow(JFrame mainWindow) {
+        App.mainWindow = mainWindow;
     }
 
-    public static NewUser getNewUserView() {
-        return newUserView;
+    public static JFrame getSecondaryWindow() {
+        return secondaryWindow;
     }
 
-    public static void setNewUserView(NewUser newUserView) {
-        App.newUserView = newUserView;
-    }
-
-    public static ChangePassword getChangePasswordView() {
-        return changePasswordView;
-    }
-
-    public static void setChangePasswordView(ChangePassword changePasswordView) {
-        App.changePasswordView = changePasswordView;
-    }
-
-    public static ForgotenPassword getForgotenPassword() {
-        return forgotenPassword;
-    }
-
-    public static void setForgotenPassword(ForgotenPassword forgotenPassword) {
-        App.forgotenPassword = forgotenPassword;
-    }
-
-    public static MainView getMain() {
-        return main;
-    }
-
-    public static void setMain(MainView main) {
-        App.main = main;
-    }
-
-    public static AboutEdit getAbout() {
-        return about;
-    }
-
-    public static void setAbout(AboutEdit about) {
-        App.about = about;
+    public static void setSecondaryWindow(JFrame secondaryWindow) {
+        App.secondaryWindow = secondaryWindow;
     }
 }
