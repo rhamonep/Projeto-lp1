@@ -13,10 +13,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import model.SocialNetwork;
 import view.Login.Login;
 import view.Login.NewUser;
@@ -70,7 +68,7 @@ public class App implements Serializable{
         }
         
         catch(IOException | ClassNotFoundException e){
-            ;
+            JOptionPane.showMessageDialog(null,"erro na leitura do arquivo: " + e);
         }
            
         showLoginView();
@@ -142,9 +140,9 @@ public class App implements Serializable{
         oos.writeObject(App.network);
         }
         catch(FileNotFoundException e){
-            ;
+            JOptionPane.showMessageDialog(null,"arquivo não encontrado: " + e);
         }catch(IOException e){
-            ;
+            JOptionPane.showMessageDialog(null,"erro no salvamento do arquivo: " + e);
         }   
     }
 }
