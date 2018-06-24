@@ -20,6 +20,14 @@ public class MainView extends javax.swing.JFrame {
         initComponents();
         FeedView p1 = new FeedView();
         mainPane.setViewportView(p1);
+        
+        this.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                App.saveNetwork();
+                System.exit(0);
+            }
+        });
     }
     
 

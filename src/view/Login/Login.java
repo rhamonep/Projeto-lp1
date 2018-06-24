@@ -18,6 +18,14 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+        
+        this.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                App.saveNetwork();
+                System.exit(0);
+            }
+        });
     }
 
     /**
