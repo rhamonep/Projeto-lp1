@@ -5,6 +5,7 @@
  */
 package view.CreationWindows;
 
+import control.App;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import model.Post;
@@ -141,7 +142,10 @@ public class NewPost extends javax.swing.JFrame {
         GridBagConstraints c = new GridBagConstraints();
         PhotosView p1;
         p1 = new PhotosView();
-        p1.getLabel().setIcon(new ImageIcon(image.getImage().getScaledInstance(p1.getLabel().getWidth(), p1.getLabel().getHeight(), Image.SCALE_DEFAULT)));
+        Post p = new Post();
+        p.addPicture(image);
+        
+        
         c.insets = new Insets(0, 0, 10, 0);
         c.gridx = 0;
         c.gridy = 0;
