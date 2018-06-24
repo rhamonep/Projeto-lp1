@@ -25,6 +25,8 @@ public class NewPost extends javax.swing.JFrame {
      */
     public NewPost() {
         initComponents();
+        GridBagLayout layout = new GridBagLayout();
+        panelP.setLayout(layout);
         
     }
     
@@ -45,6 +47,7 @@ public class NewPost extends javax.swing.JFrame {
         text = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         addPhoto.setText("Adicionar Fotos");
         addPhoto.addActionListener(new java.awt.event.ActionListener() {
@@ -110,7 +113,7 @@ public class NewPost extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(309, Short.MAX_VALUE))
         );
 
         text.getAccessibleContext().setAccessibleName("");
@@ -126,28 +129,19 @@ public class NewPost extends javax.swing.JFrame {
     }//GEN-LAST:event_postActionPerformed
 
     private void addPhotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPhotoActionPerformed
-        /*JFileChooser photo = new JFileChooser();
+
+         JFileChooser photo = new JFileChooser();
         photo.setDialogTitle("Selecione uma foto");
         photo.setFileSelectionMode(JFileChooser.FILES_ONLY);
 
         int opc = photo.showOpenDialog(this);
         if(opc == JFileChooser.APPROVE_OPTION){
-        ImageIcon image = new ImageIcon(photo.getSelectedFile().getPath());
-        */
-        GridBagLayout layout = new GridBagLayout();
-        PhotosView p1;
- 
-         JFileChooser photo = new JFileChooser();
-photo.setDialogTitle("Selecione uma foto");
-photo.setFileSelectionMode(JFileChooser.FILES_ONLY);
-
-int opc = photo.showOpenDialog(this);
-if(opc == JFileChooser.APPROVE_OPTION){
         ImageIcon image = new ImageIcon(photo.getSelectedFile().getPath());	   
         
-        panelP.setLayout(layout);
         GridBagConstraints c = new GridBagConstraints();
-        p1 = new PhotosView(image);
+        PhotosView p1;
+        p1 = new PhotosView();
+        p1.getLabel().setIcon(new ImageIcon(image.getImage().getScaledInstance(p1.getLabel().getWidth(), p1.getLabel().getHeight(), Image.SCALE_DEFAULT)));
         c.insets = new Insets(0, 0, 10, 0);
         c.gridx = 0;
         c.gridy = 0;

@@ -7,6 +7,7 @@ package view.Photos;
 
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 /**
  *
@@ -17,11 +18,13 @@ public class PhotosView extends javax.swing.JPanel {
     /**
      * Creates new form Photos
      */
-    public PhotosView(ImageIcon image) {
-        photoP.setIcon(new ImageIcon(image.getImage().getScaledInstance(photoP.getWidth(), photoP.getHeight(), Image.SCALE_DEFAULT)));
+    public PhotosView() {
+        //photoP.setIcon(new ImageIcon(image.getImage().getScaledInstance(photoP.getWidth(), photoP.getHeight(), Image.SCALE_DEFAULT)));
         initComponents();
     }
-
+    public JLabel getLabel(){
+        return photoP;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
