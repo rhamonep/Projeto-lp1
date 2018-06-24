@@ -8,19 +8,18 @@ package view;
 import control.App;
 import java.awt.BorderLayout;
 import java.awt.GridBagLayout;
+import javax.swing.JPanel;
 import view.Feed.FeedView;
+import view.Gallery.GaleryView;
 /**
  *
  * @author augus
  */
 public class MainView extends javax.swing.JFrame {
-
+    private JPanel viewPanel;
     
     public MainView() {
         initComponents();
-        FeedView p1 = new FeedView();
-        mainPane.setViewportView(p1);
-        
         this.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosing(java.awt.event.WindowEvent windowEvent) {
@@ -28,6 +27,8 @@ public class MainView extends javax.swing.JFrame {
                 System.exit(0);
             }
         });
+        
+        this.showFeed();
     }
     
 
@@ -194,7 +195,7 @@ public class MainView extends javax.swing.JFrame {
     }//GEN-LAST:event_friendsActionPerformed
 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
-        // TODO add your handling code here:
+        this.showFeed();
     }//GEN-LAST:event_homeActionPerformed
 
     private void ProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProfileActionPerformed
@@ -220,6 +221,16 @@ public class MainView extends javax.swing.JFrame {
                 new MainView().setVisible(true);
             }
         }); 
+    }
+    
+    public void showFeed(){
+        viewPanel = new FeedView();
+        mainPane.setViewportView(viewPanel);
+    }
+    
+    public void showGalery(){
+        viewPanel = new GaleryView();
+        mainPane.setViewportView(viewPanel);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

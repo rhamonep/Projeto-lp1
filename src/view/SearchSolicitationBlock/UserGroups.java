@@ -16,6 +16,7 @@ public class UserGroups extends javax.swing.JPanel {
      */
     public UserGroups() {
         initComponents();
+        
     }
 
     /**
