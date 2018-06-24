@@ -45,7 +45,6 @@ public class NewPost extends javax.swing.JFrame {
         text = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setResizable(false);
 
         addPhoto.setText("Adicionar Fotos");
         addPhoto.addActionListener(new java.awt.event.ActionListener() {
@@ -73,6 +72,12 @@ public class NewPost extends javax.swing.JFrame {
         );
 
         jLabel1.setText("Fotos adicionadas:");
+
+        text.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentResized(java.awt.event.ComponentEvent evt) {
+                textComponentResized(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -155,6 +160,10 @@ if(opc == JFileChooser.APPROVE_OPTION){
         
 
     }//GEN-LAST:event_addPhotoActionPerformed
+
+    private void textComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_textComponentResized
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textComponentResized
 
     /**
      * @param args the command line arguments
