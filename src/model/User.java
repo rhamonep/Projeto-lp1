@@ -1,6 +1,8 @@
 package model;
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -10,6 +12,9 @@ public class User implements Serializable {
 	private String name;
 	private String email;
         private String password;
+        private String address;
+        private String phone;
+        private String bio;
         private ImageIcon profilePicture;
         private List<ImageIcon> pictures;
 	private Date dob;  
@@ -80,6 +85,12 @@ public class User implements Serializable {
 	public Date getDob() {
 		return dob;
 	}
+        
+        public String getDobString(){
+            DateFormat df = new SimpleDateFormat("dd/mm/yyyy");
+            
+            return df.format(dob);
+        }
 	
 	public void setDob(Date dob) {
 		this.dob = dob;
@@ -101,4 +112,25 @@ public class User implements Serializable {
 	public void addFriendRequest(User friendRequest) {
 		this.friendRequests.add(friendRequest);
 	}
+        
+        public String getAddress(){
+            return this.address;
+        }
+        
+        public void setAddress(String address){
+            this.address = address;
+        }
+        
+        public String getPhone(){
+            return this.phone;
+        }
+        
+        public void setPhone(String phone){
+            this.phone = phone;
+        }
+        
+        public String getBio(){
+            return this.bio;
+        }
+        
 }
