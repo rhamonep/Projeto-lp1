@@ -134,7 +134,16 @@ public class MainView extends javax.swing.JFrame {
                 .addGap(118, 118, 118))
         );
 
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
         jButton4.setText("Buscar");
+
+        mainPane.setBackground(new java.awt.Color(51, 0, 204));
+        mainPane.setForeground(new java.awt.Color(0, 0, 255));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -187,6 +196,10 @@ public class MainView extends javax.swing.JFrame {
         App.showLoginView();
         this.dispose();
     }//GEN-LAST:event_logoutActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments

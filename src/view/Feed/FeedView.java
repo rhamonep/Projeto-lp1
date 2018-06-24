@@ -48,6 +48,8 @@ public class FeedView extends javax.swing.JPanel {
         newPost = new javax.swing.JButton();
         post = new javax.swing.JPanel();
 
+        setBackground(new java.awt.Color(51, 51, 255));
+
         newPost.setText("Nova Postagem");
         newPost.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

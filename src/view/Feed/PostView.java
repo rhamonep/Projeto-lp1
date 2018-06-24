@@ -37,6 +37,8 @@ public class PostView extends javax.swing.JPanel {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
         jLabel1.setText("Nome do Usuario");
 
         javax.swing.GroupLayout PhotosLayout = new javax.swing.GroupLayout(Photos);
@@ -51,6 +53,11 @@ public class PostView extends javax.swing.JPanel {
         );
 
         jButton1.setText("Publico");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Comentar");
 
@@ -67,7 +74,7 @@ public class PostView extends javax.swing.JPanel {
 
         jScrollPane1.setViewportView(jTextPane1);
 
-        jButton3.setText(" \"n\" Comentários");
+        jButton3.setText("Exibir comentários");
 
         jButton4.setText("Apagar");
 
@@ -114,6 +121,10 @@ public class PostView extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
