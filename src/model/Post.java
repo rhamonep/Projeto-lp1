@@ -6,7 +6,6 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.List;
 import javax.swing.ImageIcon;
 
 public class Post extends DataModel {
@@ -15,8 +14,8 @@ public class Post extends DataModel {
 	private String description;
         
         public Post(){
-        comments = new ArrayList<Comment>();
-        picture = new ArrayList<ImageIcon>();
+        comments = new ArrayList<>();
+        picture = new ArrayList<>();
         }
 	
         public ArrayList<Comment> getComments() {
