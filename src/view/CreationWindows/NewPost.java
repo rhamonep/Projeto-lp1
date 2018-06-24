@@ -21,9 +21,9 @@ import view.Photos.PhotosView;
  */
 public class NewPost extends javax.swing.JFrame {
 
-    /**
-     * Creates new form NewPost
-     */
+    private ImageIcon image;
+    private PhotosView p1;
+    
     public NewPost() {
         initComponents();
         GridBagLayout layout = new GridBagLayout();
@@ -137,11 +137,10 @@ public class NewPost extends javax.swing.JFrame {
 
         int opc = photo.showOpenDialog(this);
         if(opc == JFileChooser.APPROVE_OPTION){
-        ImageIcon image = new ImageIcon(photo.getSelectedFile().getPath());	   
+        this.image = new ImageIcon(photo.getSelectedFile().getPath());	   
         
         GridBagConstraints c = new GridBagConstraints();
-        PhotosView p1;
-        p1 = new PhotosView();
+        p1 = new PhotosView(image);
         Post p = new Post();
         p.addPicture(image);
         

@@ -18,9 +18,10 @@ public class PhotosView extends javax.swing.JPanel {
     /**
      * Creates new form Photos
      */
-    public PhotosView() {
-        //photoP.setIcon(new ImageIcon(image.getImage().getScaledInstance(photoP.getWidth(), photoP.getHeight(), Image.SCALE_DEFAULT)));
-        initComponents();
+    public PhotosView(ImageIcon image) {
+         initComponents();
+        photoP.setIcon(new ImageIcon(image.getImage().getScaledInstance(photoP.getWidth(), photoP.getHeight(), Image.SCALE_DEFAULT)));
+
         
     }
   
@@ -44,7 +45,7 @@ public class PhotosView extends javax.swing.JPanel {
         Photos.setLayout(PhotosLayout);
         PhotosLayout.setHorizontalGroup(
             PhotosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         PhotosLayout.setVerticalGroup(
             PhotosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -55,14 +56,14 @@ public class PhotosView extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(photoP, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
             .addComponent(Photos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(photoP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(photoP, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(photoP, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(Photos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 15, Short.MAX_VALUE))
         );
