@@ -4,13 +4,14 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import javax.swing.ImageIcon;
 
 public class User implements Serializable {
 	private String name;
 	private String email;
         private String password;
-        private Photo profilePicture;
-        private List<Photo> pictures;
+        private ImageIcon profilePicture;
+        private List<ImageIcon> pictures;
 	private Date dob;  
         private List<Post> feed;
 	private List<User> friends;
@@ -44,20 +45,20 @@ public class User implements Serializable {
             this.password = password;
         }
 
-        public Photo getProfilePicture() {
+        public ImageIcon getProfilePicture() {
             return profilePicture;
         }
 
-        public void setProfilePicture(Photo profilePicture) {
+        public void setProfilePicture(ImageIcon profilePicture) {
             this.profilePicture = profilePicture;
         }
 
-        public List<Photo> getPictures() {
+        public List<ImageIcon> getPictures() {
             return pictures;
         }
 
-        public void setPictures(List<Photo> pictures) {
-            this.pictures = pictures;
+        public void addPicture(ImageIcon picture) {
+            this.pictures.add(picture);
         }
 
         public List getFeed() {

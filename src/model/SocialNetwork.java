@@ -7,22 +7,21 @@ import java.util.List;
 
 
 public class SocialNetwork implements Serializable {
-    public List<User> users;
-    public User user;
+    private List<User> users;
+    private User currentUser;
     
     public SocialNetwork() {
         this.users = new ArrayList();
     }
     
     public boolean login(String email, String password) {
-        System.out.println(email);
-        System.out.println(password);
         for(User user: users) {
            if (user.getEmail().equals(email) && user.getPassword().equals(password)){
-               this.user = user;
+               this.currentUser = user;
                return true;
            }
         }
+        
         return false;
     }
     
@@ -30,10 +29,6 @@ public class SocialNetwork implements Serializable {
                               String confirmPassword, Date dob){
         User newUser = new User(name, password, email, dob);
         this.users.add(newUser);
-        
-        for(User member: users){
-            System.out.println(member.getName());
-        }
     }
     
     public boolean changePassword(String email, String password, String confirmPassword) {
@@ -43,6 +38,29 @@ public class SocialNetwork implements Serializable {
                return true;
            }
         }
+        
         return false;
-    }  
+    }
+    
+    public User getUser(String email){
+        for(User userTmp: users){
+            if(userTmp.getEmail().equals(email)){
+                return userTmp;
+            }
+        }
+   
+        return null;
+    }
+    
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public void addUser(User user) {
+        this.users.add(user);
+    }
+
+    public User getCurrentUser() {
+        return currentUser;
+    }    
 }
