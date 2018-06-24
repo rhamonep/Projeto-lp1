@@ -5,14 +5,29 @@
  */
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
+import javax.swing.ImageIcon;
 
-public class Group {
+public class Group implements Serializable{
 	private String name;
-	private ArrayList<User> members;
-	private ArrayList<User> memberRequests;
-	private ArrayList<Photo> pictures;
-	private ArrayList<Post> posts;
+	private List<User> members;
+	private List<User> memberRequests;
+        private List<User> admins;
+	private List<ImageIcon> pictures;
+	private List<Post> posts;
+        
+        public Group(String name, User adm){
+            this.members = new ArrayList();
+            this.memberRequests = new ArrayList();
+            this.admins = new ArrayList();
+            this.pictures = new ArrayList();
+            this.posts = new ArrayList();
+            
+            this.name = name;
+            this.admins.add(adm);
+        }
 
 	public String getName() {
 		return name;
@@ -22,7 +37,7 @@ public class Group {
 		this.name = name;
 	}
 	
-	public ArrayList<User> getMembers() {
+	public List getMembers() {
 		return members;
 	}
 	
@@ -30,7 +45,7 @@ public class Group {
 		this.members.add(newMember);
 	}
 	
-	public ArrayList<User> getMemberRequests() {
+	public List getMemberRequests() {
 		return memberRequests;
 	}
 
@@ -38,15 +53,15 @@ public class Group {
 		this.memberRequests.add(memberRequest);
 	}
 	
-	public ArrayList<Photo> getPictures() {
+	public List getPictures() {
 		return pictures;
 	}
 	
-	public void addPicture(Photo picture) {
+	public void addPicture(ImageIcon picture) {
 		this.pictures.add(picture);
 	}
 	
-	public ArrayList<Post> getPosts() {
+	public List getPosts() {
 		return posts;
 	}
 	

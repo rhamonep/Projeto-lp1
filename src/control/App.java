@@ -10,7 +10,6 @@ import javax.swing.JFrame;
 import model.SocialNetwork;
 import view.Login.Login;
 import view.Login.NewUser;
-import view.Login.ChangePassword;
 import view.Login.ForgotenPassword;
 import view.MainView;
 import view.About.AboutEdit;
@@ -61,11 +60,7 @@ public class App implements Serializable{
         secondaryWindow = new NewUser();
         secondaryWindow.setVisible(true);
     }
-    
-    public static void showChangePasswordView(){
-        secondaryWindow = new ChangePassword();
-        secondaryWindow.setVisible(true);
-    }
+
     public static void showForgotenPasswordView(){
         secondaryWindow = new ForgotenPassword();
         secondaryWindow.setVisible(true);
