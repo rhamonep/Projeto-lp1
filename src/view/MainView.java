@@ -9,8 +9,10 @@ import control.App;
 import java.awt.BorderLayout;
 import java.awt.GridBagLayout;
 import javax.swing.JPanel;
+import model.User;
 import view.Feed.FeedView;
 import view.Gallery.GaleryView;
+import view.SearchSolicitationBlock.Search;
 /**
  *
  * @author augus
@@ -47,8 +49,8 @@ public class MainView extends javax.swing.JFrame {
         blocked = new javax.swing.JButton();
         Profile = new javax.swing.JButton();
         photos = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
+        searchText = new javax.swing.JTextField();
+        search = new javax.swing.JButton();
         mainPane = new javax.swing.JScrollPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -94,6 +96,11 @@ public class MainView extends javax.swing.JFrame {
         });
 
         photos.setText("Galeria de fotos");
+        photos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                photosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -144,13 +151,18 @@ public class MainView extends javax.swing.JFrame {
                 .addGap(118, 118, 118))
         );
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        searchText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                searchTextActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Buscar");
+        search.setText("Buscar");
+        search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchActionPerformed(evt);
+            }
+        });
 
         mainPane.setBackground(new java.awt.Color(51, 0, 204));
         mainPane.setForeground(new java.awt.Color(0, 0, 255));
@@ -165,9 +177,9 @@ public class MainView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(searchText, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4))
+                        .addComponent(search))
                     .addComponent(mainPane, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         layout.setVerticalGroup(
@@ -178,8 +190,8 @@ public class MainView extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton4))
+                            .addComponent(searchText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(search))
                         .addGap(10, 10, 10)
                         .addComponent(mainPane, javax.swing.GroupLayout.PREFERRED_SIZE, 478, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -207,9 +219,18 @@ public class MainView extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_logoutActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void searchTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_searchTextActionPerformed
+
+    private void photosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_photosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_photosActionPerformed
+
+    private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
+         showSearch(searchText.getText());
+         
+    }//GEN-LAST:event_searchActionPerformed
 
     /**
      * @param args the command line arguments
@@ -232,6 +253,11 @@ public class MainView extends javax.swing.JFrame {
         viewPanel = new GaleryView();
         mainPane.setViewportView(viewPanel);
     }
+    
+    public void showSearch(String str){
+        viewPanel = new Search(str);
+        mainPane.setViewportView(viewPanel);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Profile;
@@ -239,13 +265,13 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JButton friends;
     private javax.swing.JButton groups;
     private javax.swing.JButton home;
-    private javax.swing.JButton jButton4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton logout;
     private javax.swing.JScrollPane mainPane;
     private javax.swing.JButton photos;
     private javax.swing.JLabel profilePicture;
+    private javax.swing.JButton search;
+    private javax.swing.JTextField searchText;
     private javax.swing.JButton solicitations;
     private javax.swing.JLabel userName;
     // End of variables declaration//GEN-END:variables

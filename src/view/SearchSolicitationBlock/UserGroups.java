@@ -5,17 +5,20 @@
  */
 package view.SearchSolicitationBlock;
 
+import control.App;
+import model.User;
+
 /**
  *
  * @author Usuario
  */
 public class UserGroups extends javax.swing.JPanel {
 
-    /**
-     * Creates new form SolicitationGroups
-     */
-    public UserGroups() {
+    private User user;
+            
+    public UserGroups(User user) {
         initComponents();
+        this.user = user;
         
     }
 
@@ -72,7 +75,7 @@ public class UserGroups extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
 
